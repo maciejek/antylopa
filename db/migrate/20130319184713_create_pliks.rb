@@ -4,7 +4,7 @@ class CreatePliks < ActiveRecord::Migration
       t.primary_key :idPlik
       t.string :user_email
       t.integer :projektID
-      t.datetime :dataGodzina
+      #t.datetime :dataGodzina
       t.boolean :publiczny
       t.boolean :tylkoOdczyt
       t.string :sciezka

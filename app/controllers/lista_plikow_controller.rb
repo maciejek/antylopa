@@ -22,6 +22,7 @@ class ListaPlikowController < ApplicationController
       format.json { render json: @plik }
     end
   end
+  
 
   # GET /pliki/new
   # GET /pliki/new.json

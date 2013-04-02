@@ -17,16 +17,13 @@
     <td><%= plik.created_at %></td>
     <td><%= plik.user_email %></td>
     <td><%= plik.projektID %></td>
-    <td><%= plik.publiczny %></td>
-    <td><%= plik.tylkoOdczyt %></td>	
-  </tr>
+    <td><%= publiczny(plik.publiczny) %></td>
+    <td><%= klodka(plik.tylkoOdczyt) %></td>	
+  </tr></a>
 <% end %>
 </table>
 
 <br />
 
-<% if uzytkownik_signed_in? %>
-			<%= current_uzytkownik.email %>
-<% end %>
 
 <%= link_to 'dodaj nowy plik', new_lista_plikow_path %>

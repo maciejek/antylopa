@@ -11,11 +11,7 @@
           
 		  <li class="dropdown">     
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">	<i class="icon-user icon-white"></i>
-			  <% if uzytkownik_signed_in? %>
-			<%= current_uzytkownik.email %>
-						  <% else %> niezalogowano
-
-<% end %>
+			  <%= active_user %>
 			
 			
 			</a>
