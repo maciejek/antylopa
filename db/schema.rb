@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(:version => 20130319201314) do
     t.string   "nazwisko"
     t.string   "imie"
     t.date     "dataUr"
-    t.string   "haslo"
     t.boolean  "administrator"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
