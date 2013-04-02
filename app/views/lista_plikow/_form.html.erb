@@ -15,6 +15,9 @@
   <div class="field">
     <%= f.label 'sciezka' %><br />
     <%= f.file_field :sciezka %>
+	<%= f.hidden_field :user_email, value: current_uzytkownik.email %>
+	<%= f.hidden_field :publiczny, value: 'false' %>
+	<%= f.hidden_field :tylkoOdczyt, value: 'true' %>
   </div>
   <div class="actions">
     <%= f.submit %>

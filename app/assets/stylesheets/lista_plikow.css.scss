@@ -1,3 +1,63 @@
 // Place all the styles related to the lista_plikow controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+table {
+	background-color: #F3F3F3;
+	border-collapse: collapse;
+	width: 100%;
+	margin: 15px 0;
+}
+
+th {
+	background-color: #00BFFF;
+	color: #FFF;
+	cursor: pointer;
+	padding: 5px 10px;
+}
+
+th small {
+	font-size: 9px; 
+}
+
+td, th {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+td a {
+	color: #663300;
+	display: block;
+	padding: 5px 10px;
+}
+th a {
+	padding-left: 0
+}
+
+td:first-of-type a {
+	background: url(./.images/file.png) no-repeat 10px 50%;
+	padding-left: 35px;
+}
+th:first-of-type {
+	padding-left: 35px;
+}
+
+td:not(:first-of-type) a {
+	background-image: none !important;
+} 
+
+tr:nth-of-type(odd) {
+	background-color: #E6E6E6;
+}
+
+tr:hover td {
+	background-color:#CACACA;
+}
+
+tr:hover td a {
+	color: #000;
+}

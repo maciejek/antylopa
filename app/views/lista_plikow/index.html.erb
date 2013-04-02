@@ -3,23 +3,27 @@
 
 <table>
   <tr>   
-    <th>Sciezka</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Nazwa</th>
+    <th>Data dodania</th>
+    <th>Autor</th>
+    <th>Projekt</th>
+	<th>Widoczność</th>
+    <th>Zmiany</th>
   </tr>
 
 <% @pliki.each do |plik| %>
-<% mojString = plik.sciezka %>
   <tr>    
-    <td><%= mojString %></td>
-    <td><%= link_to 'Show', lista_plikow_path(plik), :method=>:get %></td>
-    <td><%= link_to 'Edit', edit_lista_plikow_path(plik) %></td>
-    <td><%= link_to 'Destroy', lista_plikow_path(plik), confirm: 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <td><%= plik.sciezka%></td>
+    <td><%= plik.created_at %></td>
+    <td><%= plik.user_email %></td>
+    <td><%= plik.projektID %></td>
+    <td><%= publiczny(plik.publiczny) %></td>
+    <td><%= klodka(plik.tylkoOdczyt) %></td>	
+  </tr></a>
 <% end %>
 </table>
 
 <br />
+
 
 <%= link_to 'dodaj nowy plik', new_lista_plikow_path %>

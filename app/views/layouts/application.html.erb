@@ -14,12 +14,17 @@
 
     <div class="container-fluid">
 
-
+	<% if params[:controller] == 'lista_plikow' %>
 	   <div class="span3">
 			<%= render 'layouts/sidebar' %>
 	   </div>
 	 <div class="span9"><%= yield %></div>
-	 
+
+	 <% else %>
+	 	   <div>
+			<%= yield %>
+	   </div>
+	 <% end %>
 
   </body>
 </html>

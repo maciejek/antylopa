@@ -14,7 +14,13 @@ SampleApp::Application.routes.draw do
   match '/lista_plikow/edit', :to => 'lista_plikow#edit'
 =end
   root to: 'static_pages#home'
+  
+  #devise_scope :uzytkownik do
+	#root to: "devise/sessions#new"
+	#end
 
+  #root to: 'users#new'
+  
   match '/signup',  to: 'users#new'
 
   match '/help',    to: 'static_pages#help'

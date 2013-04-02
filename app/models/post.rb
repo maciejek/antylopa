@@ -1,4 +1,4 @@
 class Post < ActiveRecord::Base
-	has_one:autor, :class_name => 'Uzytkownik'
-	has_one:dyskusjaID, :class_name => 'Dyskusja'
+	belongs_to:autor, :class_name => 'Uzytkownik'
+	belongs_to:dyskusjaID, :class_name => 'Dyskusja'
 end

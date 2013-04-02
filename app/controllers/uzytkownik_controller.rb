@@ -1,5 +1,3 @@
-class UzytkownikController::RegistrationsController < Devise::RegistrationsController
-layout :custom
-
+class UzytkownikController
 
 end
