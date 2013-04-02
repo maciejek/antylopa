@@ -1,5 +1,5 @@
 class Plik < ActiveRecord::Base
-	has_one:user_email, :class_name => 'Uzytkownik'
+	belongs_to:user_email, :class_name => 'Uzytkownik'
 	has_many:Wersja
 	has_many:Komentarz
 	
@@ -8,5 +8,9 @@ class Plik < ActiveRecord::Base
 	
 	def IdPlik
 	idPlik
+	end
+	
+	def setUser(email)
+	user_email = email
 	end
 end
