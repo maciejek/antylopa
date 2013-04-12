@@ -20,7 +20,7 @@
     <h3 id="myModalLabel">Dodaj plik</h3>
     </div>
     <div class="modal-body">
-    <%# <p><%= render 'lista_plikow/new' %></p> %>
+     <p id="dodawanie" ></p>
     </div>
     <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -28,3 +28,18 @@
     </div>
     </div>
 <% end %>
+
+<script>
+$(document).ready(function(){
+
+//alert("test");
+$.ajax({
+	url: "/lista_plikow/new",
+	type: "GET",
+	}).done(function(html) { 
+	$("#dodawanie").append(html);
+});
+});
+</script>
+	
+	

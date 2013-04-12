@@ -28,11 +28,11 @@ class ListaPlikowController < ApplicationController
   # GET /pliki/new.json
   def new
     @plik = Plik.new
-	
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @plik }
-    end
+	render :layout => false
+ #   respond_to do |format|
+  #    format.html # new.html.erb
+  #    format.json { render json: @plik }
+ #   end
   end
 
   # GET /pliki/1/edit

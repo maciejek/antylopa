@@ -1,18 +1,18 @@
 SampleApp::Application.routes.draw do
  
   devise_for :uzytkowniks
-  #, :controllers => {:registrations => "uzytkownik"}
-  resources :lista_plikow
-
-  get "users/new"
   
-  resources :lista_plikow #, :only => [:new, :create, :index]
+  #get "users/new"
   
 =begin 
   match '/lista_plikow/', :to => 'lista_plikow#index'
   match '/lista_plikow/new', :to => 'lista_plikow#new', :as => :new_lista_plikow_path
   match '/lista_plikow/edit', :to => 'lista_plikow#edit'
 =end
+  
+  resources :lista_plikow #, :only => [:new, :create, :index]
+  
+
   root to: 'static_pages#home'
   
   #devise_scope :uzytkownik do

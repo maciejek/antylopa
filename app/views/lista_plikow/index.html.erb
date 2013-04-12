@@ -1,8 +1,9 @@
 
 <h1>Uploadowanie plików</h1>
 
-<table>
+<table id="tabcia">
   <tr>   
+	<th id="hidden">ID</th>
     <th>Nazwa</th>
     <th>Data dodania</th>
     <th>Autor</th>
@@ -13,6 +14,7 @@
 
 <% @pliki.each do |plik| %>
   <tr>    
+	<td id="hidden"><%= plik.idPlik%></td>
     <td><%= plik.sciezka%></td>
     <td><%= plik.created_at %></td>
     <td><%= plik.user_email %></td>

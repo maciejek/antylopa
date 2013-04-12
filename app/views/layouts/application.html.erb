@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,10 +9,21 @@
     <%= render 'layouts/shim' %>    
   </head>
   <body>
+  	<% if !uzytkownik_signed_in? && request.fullpath!='/uzytkowniks/sign_in' && request.fullpath!='/uzytkowniks/sign_up'%>
+	 <script type="text/javascript">
+		//alert("<%= request.fullpath %>");
+		//if(window.location!="/uzytkowniks/sign_in/"){ 
+		//alert(<%= request.fullpath %>); }
+		window.location.href="/uzytkowniks/sign_in/"; 
+	</script>
+	 <% end %>
 	<div class="navbar navbar-fixed-top">
     <%= render 'layouts/header' %>
 	</div>
-
+	<div>
+	   <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p> 
+	</div>
     <div class="container-fluid">
 
 	<% if params[:controller] == 'lista_plikow' %>
