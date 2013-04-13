@@ -14,37 +14,40 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap
-
+/*
  var table;
+ var zaznaczony;
 window.onload=function hiLiteRowsClick(){
- table = document.getElementById('tabcia');
- for (var i=0;i < table.rows.length;i++){
-  table.rows[i].onclick= function () {
-   if(!this.hilite){
-    clearSelection();
-    this.origColor=this.style.backgroundColor;
-	//this.class = 'selected'
-    this.style.backgroundColor='#BCD4EC';
-    this.hilite = true;
-   }
-   else{
-    this.style.backgroundColor=this.origColor;
-   // this.style.backgroundColor='#000000';
-    this.hilite = false;
-   }
-    }
-   table.rows[i].ondblclick= function () {
-		alert(this.column[0]);
-   }
- }
-}
-
-function clearSelection(){
- for (var i=0;i < table.rows.length;i++){
-
-    table.rows[i].style.backgroundColor=table.rows[i].origColor;
-    table.rows[i].hilite = false;
-	  //  alert(i);
+	table = document.getElementById('tabcia');
+	for (var i=0;i < table.rows.length;i++){
+		table.rows[i].onclick= function () {
+			if(!this.hilite){
+				clearSelection();
+				this.origColor=this.style.backgroundColor;
+				//this.class = 'selected'
+				this.style.backgroundColor='#BCD4EC';
+				this.hilite = true;
+				alert(this.html());
+				//zaznaczony=(this).children().first().html();
+				//zaznaczony=0;
+			}
+			else{ 
+				this.style.backgroundColor=this.origColor;
+				// this.style.backgroundColor='#000000';
+				this.hilite = false;
+				zaznaczony=-1;
+			}
+			alert(zaznaczony);
+		}
 	}
 }
 
+function clearSelection(){
+	for (var i=0;i < table.rows.length;i++){
+		table.rows[i].style.backgroundColor=table.rows[i].origColor;
+		table.rows[i].hilite = false;
+		//  alert(i);
+	}
+}
+
+*/

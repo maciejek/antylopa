@@ -18,14 +18,26 @@
     <td><%= plik.sciezka%></td>
     <td><%= plik.created_at %></td>
     <td><%= plik.user_email %></td>
-    <td><%= plik.projektID %></td>
     <td><%= publiczny(plik.publiczny) %></td>
+    <td><%= plik.projektID %></td>
     <td><%= klodka(plik.tylkoOdczyt) %></td>	
   </tr></a>
 <% end %>
 </table>
 
 <br />
+
+<script type="text/javascript">
+		$('tr').click(function() {
+			var id = $(this).children().first().html();
+			//alert("dziecko " + eee);
+		});
+	
+	$("tr").dblclick( function () { 
+		var link =  "/lista_plikow/" + $(this).children().first().html();
+		window.location.href=link; 
+	});
+</script>
 
 
 <%= link_to 'dodaj nowy plik', new_lista_plikow_path %>
