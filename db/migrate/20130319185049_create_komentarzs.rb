@@ -3,7 +3,7 @@ class CreateKomentarzs < ActiveRecord::Migration
     create_table :komentarzs, :id => false do |t|
       t.primary_key :idKomentarz
       t.integer :plikID
-      t.string :user_email
+      t.integer :userID
       t.string :tresc
       t.datetime :dataGodzina
 

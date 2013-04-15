@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts, :id => false do |t|
       t.primary_key :idPost
       t.integer :dyskusjaID
-      t.string :autor
+      t.integer :userID
       t.text :tresc
       t.datetime :dataGodzina
 

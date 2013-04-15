@@ -1,7 +1,7 @@
 class CreateUdostepnianies < ActiveRecord::Migration
   def change
     create_table :udostepnianies do |t|
-      t.string :user_email
+      t.integer :userID
       t.integer :plikID
 
       t.timestamps
