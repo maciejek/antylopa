@@ -3,7 +3,7 @@ class CreateWersjas < ActiveRecord::Migration
     create_table :wersjas do |t|
       t.integer :plikID
       t.datetime :dataGodzina
-      t.string :autor
+      t.integer :autor
       t.string :sciezka
 
       t.timestamps

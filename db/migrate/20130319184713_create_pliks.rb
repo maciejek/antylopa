@@ -2,7 +2,7 @@ class CreatePliks < ActiveRecord::Migration
   def change
     create_table :pliks, :id => false do |t|
       t.primary_key :idPlik
-      t.string :user_email
+      t.integer :userID
       t.integer :projektID
       #t.datetime :dataGodzina
       t.boolean :publiczny
