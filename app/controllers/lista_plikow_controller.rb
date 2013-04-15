@@ -83,4 +83,30 @@ class ListaPlikowController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+    def newKomentarz
+    @komentarz = Komentarz.new
+	render :layout => false
+ #   respond_to do |format|
+  #    format.html # new.html.erb
+  #    format.json { render json: @plik }
+ #   end
+  end
+  
+  
+    def create
+    @komentarz = Komentarz.new(params[:komentarz])
+
+    respond_to do |format|
+      if @komentarz.save
+   #     format.html { redirect_to lista_plikow_path(@plik), notice: 'Plik was successfully created.' }
+   #     format.json { render json: @plik, status: :created, location: @plik }
+      else
+   #     format.html { render action: "new" }
+   #     format.json { render json: @plik.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  
 end
