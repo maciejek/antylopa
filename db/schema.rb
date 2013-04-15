@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130319201314) do
 
   create_table "dyskusjas", :primary_key => "idDyskusja", :force => true do |t|
-    t.string   "user_email"
+    t.integer  "userID"
     t.integer  "projektID"
     t.string   "temat"
     t.datetime "created_at", :null => false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20130319201314) do
 
   create_table "komentarzs", :primary_key => "idKomentarz", :force => true do |t|
     t.integer  "plikID"
-    t.string   "user_email"
+    t.integer  "userID"
     t.string   "tresc"
     t.datetime "dataGodzina"
     t.datetime "created_at",  :null => false
@@ -31,9 +31,8 @@ ActiveRecord::Schema.define(:version => 20130319201314) do
   end
 
   create_table "pliks", :primary_key => "idPlik", :force => true do |t|
-    t.string   "user_email"
+    t.integer  "userID"
     t.integer  "projektID"
-    t.datetime "dataGodzina"
     t.boolean  "publiczny"
     t.boolean  "tylkoOdczyt"
     t.string   "sciezka"
@@ -43,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20130319201314) do
 
   create_table "posts", :primary_key => "idPost", :force => true do |t|
     t.integer  "dyskusjaID"
-    t.string   "autor"
+    t.integer  "userID"
     t.text     "tresc"
     t.datetime "dataGodzina"
     t.datetime "created_at",  :null => false
@@ -57,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20130319201314) do
   end
 
   create_table "udostepnianies", :force => true do |t|
-    t.string   "user_email"
+    t.integer  "userID"
     t.integer  "plikID"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -67,7 +66,6 @@ ActiveRecord::Schema.define(:version => 20130319201314) do
     t.string   "nazwisko"
     t.string   "imie"
     t.date     "dataUr"
-    t.string   "haslo"
     t.boolean  "administrator"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
@@ -89,15 +87,15 @@ ActiveRecord::Schema.define(:version => 20130319201314) do
   create_table "wersjas", :force => true do |t|
     t.integer  "plikID"
     t.datetime "dataGodzina"
-    t.string   "autor"
+    t.integer  "autor"
     t.string   "sciezka"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "wiadomoscs", :primary_key => "idWiadomosc", :force => true do |t|
-    t.string   "odbiorca"
-    t.string   "nadawca"
+    t.integer  "odbiorca"
+    t.integer  "nadawca"
     t.text     "tresc"
     t.datetime "dataGodzina"
     t.datetime "created_at",  :null => false
@@ -105,7 +103,7 @@ ActiveRecord::Schema.define(:version => 20130319201314) do
   end
 
   create_table "wydarzenies", :primary_key => "idWydarzenie", :force => true do |t|
-    t.string   "user_email"
+    t.integer  "userID"
     t.integer  "projektID"
     t.string   "nazwa"
     t.datetime "dataGodzina"
