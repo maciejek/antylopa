@@ -28,16 +28,29 @@
 <br />
 
 <script type="text/javascript">
-		$('tr').click(function() {
-			var id = $(this).children().first().html();
-			//alert("dziecko " + eee);
+$(document).ready(function(){
+		$('tr').click(function () {		
+			aktywneId = $(this).children().first().html();
+			$(this).siblings('tr').removeClass('hilite');
+			$(this).toggleClass('hilite');
+			var link =  "/lista_plikow/" + aktywneId;
+			$('#wiecej').attr('href',link);	
+			//alert(link);
+			$('#usun').click(function(){ 			$.ajax({
+															url: link,
+															type: "DELETE",
+															success: function(result){
+																location.reload();
+															}
+													});
+
 		});
+});
+});
+
 	
 	$("tr").dblclick( function () { 
 		var link =  "/lista_plikow/" + $(this).children().first().html();
 		window.location.href=link; 
 	});
 </script>
-
-
-<%= link_to 'dodaj nowy plik', new_lista_plikow_path %>

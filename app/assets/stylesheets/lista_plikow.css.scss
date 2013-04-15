@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 table {
 	background-color: #F3F3F3;
 	border-collapse: collapse;
@@ -28,6 +29,10 @@ td, th {
 
 a {
 	text-decoration: none;
+}
+
+tbody tr.hilite td {
+    background: none repeat scroll 0 0 red;
 }
 
 td a {
@@ -66,4 +71,4 @@ tr:hover td a {
 
 th#hidden, td#hidden{
 	display: none;
-	}
+	}	
